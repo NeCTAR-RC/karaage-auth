@@ -42,7 +42,7 @@ def keystone_login(request, target_url,
         return redirect('index')
 
     token_data = base64.encodestring(json.dumps(token))
-    return render(request, 'kgauth/backends/keystone/redirect.html',
+    return render(request, 'keystone-service/redirect.html',
             {'token': token_data,
              'tenant_id': tenant_id,
              'target': target_url + next_page})
