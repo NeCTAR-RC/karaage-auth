@@ -1,0 +1,8 @@
+{% extends "main.html" %}
+{% block body_attrs %}onload="document.forms['token'].submit()"{% endblock body_attrs %}
+{% block content %}
+<form id="token" method="POST" action="{{ target }}">
+    <input type="hidden" name="token" value="{{ token }}"/>
+    <input type="hidden" name="tenant_id" value="{{ tenant_id }}"/>
+</form>
+{% endblock %}

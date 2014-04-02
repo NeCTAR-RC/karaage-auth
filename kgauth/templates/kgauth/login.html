@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+{% load url from future %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div id="content-main">
+    <h1>Select your login method:</h1>
+    <ul>
+        <li><a href="{% url 'kgauth_login_saml' next_path %}">Login via AAF</a></li>
+        <li><a href="{% url 'kgauth_login_local' %}?next={{ next_path }}">Login with username and password</a></li>
+    </ul>
+</div>
+{% endblock %}
