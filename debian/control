@@ -1,0 +1,15 @@
+Source: karaage3-auth
+Section: python
+Priority: optional
+Maintainer: Russell Sim <russell.sim@unimelb.edu.au>
+Build-Depends: debhelper (>=8.1.0), python (>= 2.6.6-3~),
+ python-setuptools, python-karaage, python-mock, python-factory-boy
+Standards-Version: 3.9.4
+X-Python-Version: >= 2.6
+
+Package: python-karaage-auth
+Architecture: all
+Homepage: https://github.com/NeCTAR-RC/karaage-auth
+Depends: ${misc:Depends}, ${python:Depends}, python-karaage (>= 3.0.1)
+Description: Authentication helpers for Karaage
+ This package adds extra authentication sources to karaage.
