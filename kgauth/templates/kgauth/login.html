@@ -7,8 +7,8 @@
 <div id="content-main">
     <h1>Select your login method:</h1>
     <ul>
-        <li><a href="{% url 'kgauth_login_saml' next_path %}">Login via AAF</a></li>
-        <li><a href="{% url 'kgauth_login_local' %}?next={{ next_path }}">Login with username and password</a></li>
+        <li><a href="{% if next_path %}{% url 'kgauth_login_saml' next_path %}{% else %}{% url 'kgauth_login_saml' %}{% endif %}">Login via AAF</a></li>
+        <li><a href="{% url 'kgauth_login_local' %}{% if next_path %}{% url_with_param next=next_path %}{% endif %}">Login with username and password</a></li>
     </ul>
 </div>
 {% endblock %}

@@ -7,6 +7,9 @@ urlpatterns = patterns(
     url(r'^shibboleth/(?P<next_path>.*)$',
         'kgauth.backends.shibboleth.views.shib_receiver',
         name='kgauth_login_saml'),
+    url(r'^shibboleth/$',
+        'kgauth.backends.shibboleth.views.shib_receiver',
+        name='kgauth_login_saml'),
 )
 
 if ('kgauth.backends.shibboleth.middleware.FakeShibMiddleware'
